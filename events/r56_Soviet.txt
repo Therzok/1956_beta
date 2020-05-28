@@ -462,7 +462,7 @@ country_event = {
 	id = r56.soviet.18
 	title = r56.soviet.18.t
 	desc = r56.soviet.18.d
-	picture = GFX_report_event_polish_demobilization
+	picture = GFX_report_event_soviet_purge_officers_02
 
 	fire_only_once = yes
 
@@ -658,7 +658,7 @@ country_event = {
 		create_country_leader = {
 			name = "Leon Trotsky"
 			desc = "POLITICS_LEON_TROTSKY_DESC"
-			picture = "Portrait_Leon_Trotsky.dds"
+			picture = "gfx/leaders/SOV/r56_portrait_SOV_Leon_Trotsky.dds"
 			expire = "1965.1.1"
 			ideology = leninism
 			traits = {
@@ -805,9 +805,10 @@ country_event = {
 			ideology = democratic
 			popularity = 0.29
 		}
-		set_politics = { ruling_party = democratic elections_allowed = no }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
 		hidden_effect = {
-			drop_cosmetic_tag = yes
+			set_cosmetic_tag = SOV_Russian_Federation
+			complete_national_focus = SOV_peoples_virtue
 		}
 	}
 
@@ -821,8 +822,11 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.1
 		}
-		hidden_effect = {
-			drop_cosmetic_tag = yes
+		random_country = {
+			limit  = {
+				original_tag = SOV
+			}
+			set_cosmetic_tag = SOV_Russian_Empire
 		}
 		set_country_flag = SOV_czar_flag 
 	}
@@ -837,10 +841,15 @@ country_event = {
 			ideology = fascism
 			popularity = 0.27
 		}
-		set_politics = { ruling_party = fascism elections_allowed = no }
 		hidden_effect = {
-			drop_cosmetic_tag = yes
+			random_country = {
+				limit  = {
+					original_tag = SOV
+				}
+				set_cosmetic_tag = SOV_Russian_Empire
+			}
 		}
+		set_politics = { ruling_party = fascism elections_allowed = no }
 	}
 
 }
@@ -875,7 +884,7 @@ news_event = {
 	title = r56.soviet.28.t
 	desc = r56.soviet.28.d
 	picture = GFX_news_event_006
-	
+
 	major = yes
 
 	fire_only_once = yes
@@ -1200,3 +1209,4 @@ country_event = {
 		}
 	}
 }
+

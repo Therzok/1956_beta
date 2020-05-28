@@ -30,14 +30,6 @@ if = {
 		armored_car1 = 1
 	}
 }
-if = {
-	limit = {
-		NOT = { has_dlc = "La Resistance" }
-	}
-	set_technology = {
-		gw_armored_car = 1
-	}
-}
 
 set_politics = {
 	ruling_party = fascism
@@ -226,4 +218,17 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 2
+}
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Albrecht von Auenrode"
+		portrait_path = gfx/leaders/Europe/portrait_europe_generic_operative_male_17.dds 
+		traits = { operative_infiltrator operative_master_interrogator }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { AUS }
+	}
 }
